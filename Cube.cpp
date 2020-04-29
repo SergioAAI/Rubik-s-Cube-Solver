@@ -55,7 +55,7 @@ char Cube::Face::getchar(int number)
 		}
 	}
 
-	switch (position[number])
+	switch (position[number-1])
 	{
 	case white:
 		{
@@ -81,6 +81,10 @@ char Cube::Face::getchar(int number)
 		{
 			return 'y';
 		}
+	default:
+		{
+			return ' ';
+		};
 	}
 }
 
@@ -121,10 +125,10 @@ void Cube::printCubeState()
 	cout << "| " << this->right.getchar(4) <<"  " << this->right.getchar(5) <<"  " << this->right.getchar(6) <<" |" << " " ;
 	cout << "| " << this->back.getchar(4) <<"  " << this->back.getchar(5) <<"  " << this->back.getchar(6) <<" |" << endl;
 	
-	cout << "| " << this->left.getchar(7) <<"  " << this->left.getchar(8) <<"  " << this->left.getchar(3) <<" |" << " " ;
-	cout << "| " << this->front.getchar(7) <<"  " << this->front.getchar(8) <<"  " << this->front.getchar(3) <<" |" << " " ;
-	cout << "| " << this->right.getchar(7) <<"  " << this->right.getchar(8) <<"  " << this->right.getchar(3) <<" |" << " " ;
-	cout << "| " << this->back.getchar(7) <<"  " << this->back.getchar(8) <<"  " << this->back.getchar(3) <<" |" << endl;
+	cout << "| " << this->left.getchar(7) <<"  " << this->left.getchar(8) <<"  " << this->left.getchar(9) <<" |" << " " ;
+	cout << "| " << this->front.getchar(7) <<"  " << this->front.getchar(8) <<"  " << this->front.getchar(9) <<" |" << " " ;
+	cout << "| " << this->right.getchar(7) <<"  " << this->right.getchar(8) <<"  " << this->right.getchar(9) <<" |" << " " ;
+	cout << "| " << this->back.getchar(7) <<"  " << this->back.getchar(8) <<"  " << this->back.getchar(9) <<" |" << endl;
 	
 	cout << "-----------" << " ";
 	cout << "-----------" << " ";
