@@ -12,18 +12,27 @@ class Cube
 {
 private:
 
+	int colourBuffer1 [3] {0};
+	int colourBuffer2 [3] {0};
+	int colourBuffer3 [3] {0};
+	int colourBuffer4 [3] {0};
+	
 	class Face
 	{
 	private:
-		int colour[3][3];
+		
+		array<int,9>colour{};
 		
 	public:
 		Face();
 		Face(int);
 		Face(const Face&);
-		void receiveColour();
+		void exportColour(int, int* );
+		void exportColour(char, int* );
+		void importColour(int, int*);
+		void importColour(char, int*);
 		void rotateFace();
-		char getchar(int);
+		char getChar(int);
 	};
 
 	Face up;
@@ -37,7 +46,7 @@ public:
 
 	Cube();
 	void printCubeState();
-	void rotateCounter(int);
+	void rotateCounter(void ());
 	void rotateFront();
 	void rotateBack();
 	void rotateLeft();
